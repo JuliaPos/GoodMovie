@@ -5,6 +5,8 @@ using System.Reflection;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml.Controls;
 using Caliburn.Micro;
+using GoodMovie.Contracts;
+using GoodMovie.Logger;
 using GoodMovie.ViewModels.ViewModels;
 using GoodMovie.Views;
 
@@ -31,13 +33,19 @@ namespace GoodMovie
             ViewLocator.ConfigureTypeMappings(config);
             ViewModelLocator.ConfigureTypeMappings(config);
             RegisterViewModels();
-
-            //TODO: Register your view models at the container
-        }
+            RegisterServices();
+        
+            }
 
         private void RegisterViewModels()
         {
             _container.PerRequest<HomeScreenViewModel>();
+           
+        }
+
+        private void RegisterServices()
+        {
+            _container.Singleton<IAppLogger, AppLogger>();
         }
 
         protected override object GetInstance(Type service, string key)

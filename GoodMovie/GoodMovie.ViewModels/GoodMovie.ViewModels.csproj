@@ -124,6 +124,10 @@
       <Project>{baaf50e3-5d45-49e8-b932-e7c41a269e76}</Project>
       <Name>GoodMovie.Localisations</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GoodMovie.Logger\GoodMovie.Logger.csproj">
+      <Project>{a086558c-7027-4efc-8050-1979005e8de0}</Project>
+      <Name>GoodMovie.Logger</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GoodMovie.Settings\GoodMovie.Settings.csproj">
       <Project>{8b99352b-d50d-48d3-bdb0-d2067fda6e94}</Project>
       <Name>GoodMovie.Settings</Name>

@@ -107,6 +107,11 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppLogger.cs" />
+    <Compile Include="Overrides\LogConfigurator.cs" />
+    <Compile Include="Overrides\MyStreamingFileTarget.cs" />
+    <Compile Include="Overrides\MyStreamingFileTargetImpl.cs" />
+    <Compile Include="Overrides\StreamingFileTargetWithFolder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\GoodMovie.Logger.rd.xml" />
   </ItemGroup>

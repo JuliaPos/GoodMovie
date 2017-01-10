@@ -123,6 +123,34 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GoodMovie.Common\GoodMovie.Common.csproj">
+      <Project>{d548f831-4457-4abd-94aa-c96908cc1692}</Project>
+      <Name>GoodMovie.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GoodMovie.Contracts\GoodMovie.Contracts.csproj">
+      <Project>{e49da716-0a0c-432c-9a6e-3a040f78ca5a}</Project>
+      <Name>GoodMovie.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GoodMovie.Localisations\GoodMovie.Localisations.csproj">
+      <Project>{baaf50e3-5d45-49e8-b932-e7c41a269e76}</Project>
+      <Name>GoodMovie.Localisations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GoodMovie.Logger\GoodMovie.Logger.csproj">
+      <Project>{a086558c-7027-4efc-8050-1979005e8de0}</Project>
+      <Name>GoodMovie.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GoodMovie.ServerAccess\GoodMovie.ServerAccess.csproj">
+      <Project>{89dfe7b9-786e-46e3-a1be-789a398862fa}</Project>
+      <Name>GoodMovie.ServerAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GoodMovie.Services\GoodMovie.Services.csproj">
+      <Project>{b3d23421-2acd-4dcf-b36a-f9fa704c6247}</Project>
+      <Name>GoodMovie.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GoodMovie.Settings\GoodMovie.Settings.csproj">
+      <Project>{8b99352b-d50d-48d3-bdb0-d2067fda6e94}</Project>
+      <Name>GoodMovie.Settings</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GoodMovie.ViewModels\GoodMovie.ViewModels.csproj">
       <Project>{a8734b08-7aae-4e3d-9965-2bd57e58e3e3}</Project>
       <Name>GoodMovie.ViewModels</Name>

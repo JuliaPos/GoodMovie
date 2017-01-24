@@ -147,6 +147,10 @@
       <Project>{8b99352b-d50d-48d3-bdb0-d2067fda6e94}</Project>
       <Name>GoodMovie.Settings</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GoodMovie.Strings\GoodMovie.Strings.csproj">
+      <Project>{f2a8ae68-59c0-449b-9016-1ba8d3d81b60}</Project>
+      <Name>GoodMovie.Strings</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GoodMovie.ViewModels\GoodMovie.ViewModels.csproj">
       <Project>{a8734b08-7aae-4e3d-9965-2bd57e58e3e3}</Project>
       <Name>GoodMovie.ViewModels</Name>

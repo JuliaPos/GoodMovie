@@ -1,0 +1,81 @@
+﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Microsoft.CSharp" #>
+<#@ output extension=".cs" #>
+<#
+
+    var inputFilePath = @"C:\Users\Юлия\Source\Repos\GoodMovie\GoodMovie\GoodMovie.Strings\Strings\en-US\Resources.resw";
+    var provider = new CSharpCodeProvider();
+    string className = CreateClassName(provider); 
+
+    if (File.Exists(inputFilePath)) 
+    {
+#>
+using Windows.ApplicationModel.Resources;
+
+namespace <#= GetNamespace() #> 
+{
+    public class <#= className #> 
+    {
+        public ResourceLoader ResourceLoader  {get;}
+
+        public <#= className #>() 
+        {
+            ResourceLoader = ResourceLoader.GetForCurrentView("<#= GetNamespace() #>/<#= className #>");
+        }
+
+ 
+
+<#
+        foreach (string name in GetResourceKeys(inputFilePath)) 
+		{
+#>
+        public string <#= BuildPropertyName(provider, name)  #> => ResourceLoader.GetString(nameof(<#= BuildResourceString(name)#>));    
+<#
+        }
+#>
+    }
+}
+<#
+    } 
+    else 
+    {
+        throw new FileNotFoundException(String.Format("Unable to find Resource file: {0}", inputFilePath)); 
+    } 
+#>
+<#+
+    private string BuildPropertyName(CSharpCodeProvider provider, string name)
+    {
+        return provider.CreateEscapedIdentifier(Regex.Replace(name, @"\[.+\]|\.", String.Empty));
+    }
+
+    private string BuildResourceString(string name)
+    {
+        return name.Replace(".", "/");
+    }
+
+    private string CreateClassName(CSharpCodeProvider provider) 
+    {
+        return provider.CreateEscapedIdentifier(Path.GetFileNameWithoutExtension(Host.TemplateFile));
+    }
+
+    private string GetNamespace() 
+    {
+        return Host.ResolveParameterValue("directiveId", "namespaceDirectiveProcessor", "namespaceHint");
+    }
+
+    private static IEnumerable GetResourceKeys(string filePath)
+    {
+        var doc = XDocument.Load(filePath);
+
+        return doc.Root.Elements("data").Select(e => e.Attribute("name").Value);
+    }
+#>

@@ -120,10 +120,6 @@
       <Project>{e49da716-0a0c-432c-9a6e-3a040f78ca5a}</Project>
       <Name>GoodMovie.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GoodMovie.Localisations\GoodMovie.Localisations.csproj">
-      <Project>{baaf50e3-5d45-49e8-b932-e7c41a269e76}</Project>
-      <Name>GoodMovie.Localisations</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GoodMovie.Logger\GoodMovie.Logger.csproj">
       <Project>{a086558c-7027-4efc-8050-1979005e8de0}</Project>
       <Name>GoodMovie.Logger</Name>

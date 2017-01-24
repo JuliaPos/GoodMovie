@@ -8,9 +8,9 @@
     <caliburn:CaliburnApplication.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <!--<ResourceDictionary Source="/Assets/Styles/BrandingStyles.xaml" />
+                <ResourceDictionary Source="/Assets/Styles/BrandingStyles.xaml" />
                 <ResourceDictionary Source="/Assets/Styles/BaseStyles.xaml" />
-                <ResourceDictionary Source="/Assets/Styles/DataTemplates.xaml" />-->
+                <ResourceDictionary Source="/Assets/Styles/DataTemplates.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
             <strings:LocalizedStrings x:Key="LocalizedStrings" />
